@@ -1,0 +1,181 @@
+---
+title: "Good Company · Toronto's Exclusive Dinner Club for Meaningful Conversations"
+description: "Six strangers. One table. One evening you won't forget. Good Company is Toronto's curated dinner club — founding seats are limited to 50. Reserve yours now."
+permalink: "/"
+tags: "sitemap" # content/content.json will make sure that all pages in content/ are marked with a "sitemap" tag, for automatic sitemap generation. As index.html is not in content/, we need to add it here to ensure the root page is included in the sitemap generation
+---
+
+{% extends "layouts/base.html" %}
+
+{% block head %}
+    <!-- Critical styles are loaded first -->
+    <link rel="stylesheet" href="/assets/css/critical.css"/>
+
+    <!-- If we're in production, defer the rest of the home page styles. In development, always load it. Otherwise the site will break when hot-reload is used. -->
+    {% if client.isProduction %}
+        <link rel="preload" href="/assets/css/local.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript>
+            <link rel="stylesheet" href="/assets/css/local.css">
+        </noscript>
+
+    {% else %}
+        <link rel="stylesheet" href="/assets/css/local.css"/>
+    {% endif %}
+
+    <!-- To ensure proper validation, prevent errors, and encourage developers to check, schema's are an opt-in feature. They're very bespoke and requires some customising  -->
+    <!-- Uncomment the code below to enable Structured Data, and test it when you deploy to Netlify - https://developers.google.com/search/docs/appearance/structured-data -->
+    <!-- {% include "components/home-schema.html" %} -->
+{% endblock %}
+
+{% block body %}
+
+<!-- ============================================ -->
+<!--                    Hero                      -->
+<!-- ============================================ -->
+
+<section id="hero">
+    <div class="cs-container">
+        <div class="cs-left">
+            <span class="cs-topper">Toronto · By invitation only</span>
+            <h1 class="cs-title">
+                Life's better with<br>
+                <em><span class="cs-word-swap">
+                    <span class="cs-word cs-active">good company.</span>
+                </span></em>
+            </h1>
+            <p class="cs-text">The first fifty people in get something nobody else will. This summer, you come as a guest. A good restaurant, a table worth sitting at, people you wouldn't have found on your own. Show up. Order what you want. Leave knowing someone real.</p>
+        </div>
+        <div class="cs-right">
+            <h2 class="cs-form-title">Your table
+awaits.</h2>
+            <p class="cs-form-sub">Six strangers. One table.
+One unrepeatable evening.</p>
+            <form class="cs-form" name="waitlist" method="POST" data-netlify="true">
+                <div class="cs-field">
+                    <label for="name">first name</label>
+                    <input type="text" id="name" name="name" placeholder="your name" required>
+                </div>
+                <div class="cs-field">
+                    <label for="email">email</label>
+                    <input type="email" id="email" name="email" placeholder="you@example.com" required>
+                </div>
+                <button type="submit" class="cs-button-solid">Reserve My Seat</button>
+                <p class="cs-form-fine">Free to join. First dinner this summer.</p>
+            </form>
+        </div>
+    </div>
+</section>
+
+<script>
+const words = ['good company.', 'great people.', 'real connection.', 'good vibes.', 'your people.'];
+let current = 0;
+const container = document.querySelector('.cs-word-swap');
+
+setInterval(() => {
+    const currentEl = container.querySelector('.cs-active');
+    const next = document.createElement('span');
+    next.className = 'cs-word';
+    next.textContent = words[(++current) % words.length];
+    container.appendChild(next);
+    next.getBoundingClientRect();
+    currentEl.classList.add('cs-exit');
+    currentEl.classList.remove('cs-active');
+    next.classList.add('cs-active');
+    setTimeout(() => currentEl.remove(), 500);
+}, 3500);
+</script>
+
+<!-- ============================================ -->
+<!--              Polaroid Marquee                -->
+<!-- ============================================ -->
+
+<section id="cs-polaroid">
+    <p class="cs-label">good times · good people · good company</p>
+    <div class="cs-track-wrap">
+        <div class="cs-track">
+            <div class="cs-polaroid">
+                <img class="cs-polaroid-img" src="https://websthetic.tor1.cdn.digitaloceanspaces.com/the-good-co-club/polaroid-img/polaroid-img-1.jpg" alt="dinner in kensington" loading="lazy" decoding="async" width="160" height="130">
+                <p class="cs-polaroid-caption">dinner in kensington</p>
+            </div>
+            <div class="cs-polaroid">
+                <img class="cs-polaroid-img" src="https://websthetic.tor1.cdn.digitaloceanspaces.com/the-good-co-club/polaroid-img/polaroid-img-2.jpg" alt="new friends, old wine" loading="lazy" decoding="async" width="160" height="130">
+                <p class="cs-polaroid-caption">new friends, old wine</p>
+            </div>
+            <div class="cs-polaroid">
+                <img class="cs-polaroid-img" src="https://websthetic.tor1.cdn.digitaloceanspaces.com/the-good-co-club/polaroid-img/polaroid-img-3.jpg" alt="rooftop summer night" loading="lazy" decoding="async" width="160" height="130">
+                <p class="cs-polaroid-caption">rooftop summer night</p>
+            </div>
+            <div class="cs-polaroid">
+                <img class="cs-polaroid-img" src="https://websthetic.tor1.cdn.digitaloceanspaces.com/the-good-co-club/polaroid-img/polaroid-img-4.jpg" alt="brunch on queen st" loading="lazy" decoding="async" width="160" height="130">
+                <p class="cs-polaroid-caption">brunch on queen st</p>
+            </div>
+            <div class="cs-polaroid">
+                <img class="cs-polaroid-img" src="https://websthetic.tor1.cdn.digitaloceanspaces.com/the-good-co-club/polaroid-img/polaroid-img-5.jpg" alt="good vibes only" loading="lazy" decoding="async" width="160" height="130">
+                <p class="cs-polaroid-caption">good vibes only</p>
+            </div>
+            <div class="cs-polaroid">
+                <img class="cs-polaroid-img" src="https://websthetic.tor1.cdn.digitaloceanspaces.com/the-good-co-club/polaroid-img/polaroid-img-6.jpg" alt="gallery opening night" loading="lazy" decoding="async" width="160" height="130">
+                <p class="cs-polaroid-caption">tuesday afternoon</p>
+            </div>
+            <div class="cs-polaroid">
+                <img class="cs-polaroid-img" src="https://websthetic.tor1.cdn.digitaloceanspaces.com/the-good-co-club/polaroid-img/polaroid-img-7.jpg" alt="the whole crew" loading="lazy" decoding="async" width="160" height="130">
+                <p class="cs-polaroid-caption">the whole crew</p>
+            </div>
+            <div class="cs-polaroid">
+                <img class="cs-polaroid-img" src="https://websthetic.tor1.cdn.digitaloceanspaces.com/the-good-co-club/polaroid-img/polaroid-img-8.jpg" alt="late night tacos" loading="lazy" decoding="async" width="160" height="130">
+                <p class="cs-polaroid-caption">late night tacos</p>
+            </div>
+            <div class="cs-polaroid">
+                <img class="cs-polaroid-img" src="https://websthetic.tor1.cdn.digitaloceanspaces.com/the-good-co-club/polaroid-img/polaroid-img-9.jpg" alt="first event ever" loading="lazy" decoding="async" width="160" height="130">
+                <p class="cs-polaroid-caption">first dinner ever</p>
+            </div>
+            <div class="cs-polaroid">
+                <img class="cs-polaroid-img" src="https://websthetic.tor1.cdn.digitaloceanspaces.com/the-good-co-club/polaroid-img/polaroid-img-10.jpg" alt="you had to be there" loading="lazy" decoding="async" width="160" height="130">
+                <p class="cs-polaroid-caption">you had to be there</p>
+            </div>
+            <!-- duplicated for seamless loop -->
+            <div class="cs-polaroid">
+                <img class="cs-polaroid-img" src="https://websthetic.tor1.cdn.digitaloceanspaces.com/the-good-co-club/polaroid-img/polaroid-img-1.jpg" alt="dinner in kensington" loading="lazy" decoding="async" width="160" height="130">
+                <p class="cs-polaroid-caption">dinner in kensington</p>
+            </div>
+            <div class="cs-polaroid">
+                <img class="cs-polaroid-img" src="https://websthetic.tor1.cdn.digitaloceanspaces.com/the-good-co-club/polaroid-img/polaroid-img-2.jpg" alt="new friends, old wine" loading="lazy" decoding="async" width="160" height="130">
+                <p class="cs-polaroid-caption">new friends, old wine</p>
+            </div>
+            <div class="cs-polaroid">
+                <img class="cs-polaroid-img" src="https://websthetic.tor1.cdn.digitaloceanspaces.com/the-good-co-club/polaroid-img/polaroid-img-3.jpg" alt="rooftop summer night" loading="lazy" decoding="async" width="160" height="130">
+                <p class="cs-polaroid-caption">rooftop summer night</p>
+            </div>
+            <div class="cs-polaroid">
+                <img class="cs-polaroid-img" src="https://websthetic.tor1.cdn.digitaloceanspaces.com/the-good-co-club/polaroid-img/polaroid-img-4.jpg" alt="brunch on queen st" loading="lazy" decoding="async" width="160" height="130">
+                <p class="cs-polaroid-caption">brunch on queen st</p>
+            </div>
+            <div class="cs-polaroid">
+                <img class="cs-polaroid-img" src="https://websthetic.tor1.cdn.digitaloceanspaces.com/the-good-co-club/polaroid-img/polaroid-img-5.jpg" alt="good vibes only" loading="lazy" decoding="async" width="160" height="130">
+                <p class="cs-polaroid-caption">good vibes only</p>
+            </div>
+            <div class="cs-polaroid">
+                <img class="cs-polaroid-img" src="https://websthetic.tor1.cdn.digitaloceanspaces.com/the-good-co-club/polaroid-img/polaroid-img-6.jpg" alt="gallery opening night" loading="lazy" decoding="async" width="160" height="130">
+                <p class="cs-polaroid-caption">tuesday afternoon</p>
+            </div>
+            <div class="cs-polaroid">
+                <img class="cs-polaroid-img" src="https://websthetic.tor1.cdn.digitaloceanspaces.com/the-good-co-club/polaroid-img/polaroid-img-7.jpg" alt="the whole crew" loading="lazy" decoding="async" width="160" height="130">
+                <p class="cs-polaroid-caption">the whole crew</p>
+            </div>
+            <div class="cs-polaroid">
+                <img class="cs-polaroid-img" src="https://websthetic.tor1.cdn.digitaloceanspaces.com/the-good-co-club/polaroid-img/polaroid-img-8.jpg" alt="late night tacos" loading="lazy" decoding="async" width="160" height="130">
+                <p class="cs-polaroid-caption">late night tacos</p>
+            </div>
+            <div class="cs-polaroid">
+                <img class="cs-polaroid-img" src="https://websthetic.tor1.cdn.digitaloceanspaces.com/the-good-co-club/polaroid-img/polaroid-img-9.jpg" alt="first event ever" loading="lazy" decoding="async" width="160" height="130">
+                <p class="cs-polaroid-caption">first dinner ever</p>
+            </div>
+            <div class="cs-polaroid">
+                <img class="cs-polaroid-img" src="https://websthetic.tor1.cdn.digitaloceanspaces.com/the-good-co-club/polaroid-img/polaroid-img-10.jpg" alt="you had to be there" loading="lazy" decoding="async" width="160" height="130">
+                <p class="cs-polaroid-caption">you had to be there</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

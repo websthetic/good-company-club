@@ -1,0 +1,127 @@
+/*-- -------------------------- -->
+<---          Privacy           -->
+<--- -------------------------- -*/
+
+#cs-privacy {
+    width: 100%;
+    min-height: 100vh;
+    background-color: var(--secondaryLight);
+    padding: (80/16rem) (24/16rem);
+
+    .cs-container {
+        width: 100%;
+        max-width: (680/16rem);
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: (40/16rem);
+    }
+
+    .cs-logo {
+        width: (80/16rem);
+        height: (80/16rem);
+        display: block;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+    }
+
+    .cs-content {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: (32/16rem);
+    }
+
+    .cs-updated {
+        font-size: (11/16rem);
+        letter-spacing: 0.1em;
+        text-transform: lowercase;
+        color: #b09a9c;
+        font-weight: 300;
+    }
+
+    .cs-title {
+        font-family: var(--headerFont);
+        font-size: clamp(2rem, 4vw, 2.75rem);
+        font-weight: 400;
+        color: var(--headerColor);
+        line-height: 1.2;
+        margin: 0;
+    }
+
+    .cs-intro {
+        font-size: (15/16rem);
+        color: #5a3a3c;
+        line-height: 1.8;
+        font-weight: 300;
+        margin: 0;
+    }
+
+    .cs-block {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: (12/16rem);
+        padding-top: (24/16rem);
+        border-top: 0.5px solid rgba(112, 12, 12, 0.1);
+    }
+
+    .cs-heading {
+        font-family: var(--headerFont);
+        font-size: (16/16rem);
+        font-weight: 400;
+        color: var(--headerColor);
+        margin: 0;
+    }
+
+    .cs-text {
+        font-size: (14/16rem);
+        color: #5a3a3c;
+        line-height: 1.8;
+        font-weight: 300;
+        margin: 0;
+    }
+
+    .cs-list {
+        padding-left: (20/16rem);
+        display: flex;
+        flex-direction: column;
+        gap: (8/16rem);
+
+        li {
+            font-size: (14/16rem);
+            color: #5a3a3c;
+            line-height: 1.7;
+            font-weight: 300;
+        }
+    }
+
+    .cs-link {
+        color: var(--primary);
+        text-decoration: none;
+        border-bottom: 0.5px solid rgba(112, 12, 12, 0.3);
+        transition: border-color 0.2s;
+
+        &:hover {
+            border-color: var(--primary);
+        }
+    }
+
+    .cs-back {
+        font-size: (12/16rem);
+        letter-spacing: 0.08em;
+        text-decoration: none;
+        color: #8a6a6c;
+        font-weight: 300;
+        transition: color 0.2s;
+
+        &:hover {
+            color: var(--primary);
+        }
+    }
+}

@@ -1,0 +1,218 @@
+/*-- -------------------------- -->
+<---           Hero             -->
+<--- -------------------------- -*/
+
+#hero {
+    width: 100%;
+    min-height: 100vh;
+    background-color: var(--secondaryLight);
+    display: flex;
+    align-items: center;
+    padding-top: (136/16rem);
+
+    .cs-form-fine {
+    font-size: (11/16rem);
+    color: #b09a9c;
+    text-align: center;
+    margin-top: (8/16rem);
+    font-weight: 300;
+    letter-spacing: 0.04em;
+}
+
+    .cs-container {
+        width: 100%;
+        max-width: (1280/16rem);
+        margin: auto;
+        padding: 0 (16/16rem);
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+    }
+
+    .cs-left {
+        padding: (64/16rem) (48/16rem) (64/16rem) 0;
+        border-right: 1px solid rgba(112, 12, 12, 0.12);
+    }
+
+    .cs-topper {
+        font-size: (11/16rem);
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--primary);
+        font-weight: 400;
+        margin-bottom: (20/16rem);
+        display: block;
+    }
+
+    .cs-title {
+        font-family: var(--headerFont);
+        font-size: clamp(2.5rem, 4.5vw, 3.5rem);
+        font-weight: 400;
+        line-height: 1.15;
+        color: var(--headerColor);
+        max-width: (520/16rem);
+        margin: 0 0 (20/16rem) 0;
+
+        em {
+            font-style: italic;
+            color: var(--primary);
+        }
+    }
+
+.cs-word-swap {
+    display: inline-block;
+    position: relative;
+    min-width: (280/16rem);
+    overflow: hidden;
+}
+
+.cs-word {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transform: translateY(-100%);
+    white-space: nowrap;
+
+    &.cs-active {
+    opacity: 1;
+    transform: translateY(0);
+    transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.5s ease;
+    position: relative;
+}
+
+&.cs-exit {
+    opacity: 0;
+    transform: translateY(-100%);
+    transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.5s ease;
+    position: absolute;
+}
+}
+
+    .cs-text {
+        font-size: (15/16rem);
+        color: #5a3a3c;
+        line-height: 1.8;
+        font-weight: 300;
+        max-width: (440/16rem);
+    }
+
+    .cs-right {
+        padding: (64/16rem) 0 (64/16rem) (48/16rem);
+    }
+
+    .cs-form-title {
+        font-family: var(--headerFont);
+        font-size: (26/16rem);
+        font-weight: 400;
+        color: var(--headerColor);
+        margin-bottom: (6/16rem);
+    }
+
+    .cs-form-sub {
+        font-size: (13/16rem);
+        color: #8a6a6c;
+        font-weight: 300;
+        line-height: 1.6;
+        margin-bottom: (28/16rem);
+    }
+
+    .cs-form {
+        display: flex;
+        flex-direction: column;
+        gap: (12/16rem);
+    }
+
+    .cs-field {
+        display: flex;
+        flex-direction: column;
+        gap: (6/16rem);
+
+        label {
+            font-size: (11/16rem);
+            letter-spacing: 0.06em;
+            text-transform: lowercase;
+            color: #8a6a6c;
+        }
+
+        input {
+            width: 100%;
+            padding: (12/16rem) (14/16rem);
+            background: #fff;
+            border: 0.5px solid rgba(112, 12, 12, 0.2);
+            border-radius: (2/16rem);
+            color: var(--headerColor);
+            font-family: var(--bodyFont);
+            font-size: (14/16rem);
+            font-weight: 300;
+            outline: none;
+            transition: border-color 0.2s;
+
+            &::placeholder {
+                color: #c0aaac;
+            }
+
+            &:focus {
+                border-color: var(--primary);
+            }
+        }
+    }
+
+    .cs-button-solid {
+        width: 100%;
+        margin-top: (4/16rem);
+        background: var(--primary);
+        color: var(--secondaryLight);
+        font-family: var(--bodyFont);
+        font-size: (11/16rem);
+        font-weight: 400;
+        letter-spacing: 0.1em;
+        text-transform: lowercase;
+        padding: (14/16rem);
+        border: none;
+        border-radius: (2/16rem);
+        cursor: pointer;
+        transition: background-color 0.2s;
+
+        &:hover {
+            background-color: var(--primaryLight);
+        }
+
+        
+    }
+
+    /* Tablet - 768px */
+    @media only screen and (max-width: (768/16rem)) {
+        .cs-container {
+            grid-template-columns: 1fr;
+        }
+
+        .cs-left {
+            padding: (48/16rem) 0 (40/16rem) 0;
+            border-right: none;
+            border-bottom: 1px solid rgba(112, 12, 12, 0.12);
+        }
+
+        .cs-right {
+            padding: (40/16rem) 0 (48/16rem) 0;
+        }
+
+        .cs-word-swap {
+            min-width: unset;
+        }
+    }
+
+    /* Desktop - 1024px */
+@media only screen and (min-width: (1024/16rem)) {
+    padding-top: (100/16rem);
+
+    .cs-left {
+        padding: (40/16rem) (48/16rem) (40/16rem) 0;
+    }
+
+    .cs-right {
+        padding: (40/16rem) 0 (40/16rem) (48/16rem);
+    }
+}
+
+}

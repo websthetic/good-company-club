@@ -1,0 +1,84 @@
+/*-- -------------------------- -->
+<---         Thank You          -->
+<--- -------------------------- -*/
+
+#cs-thankyou {
+    width: 100%;
+    min-height: 100vh;
+    background-color: var(--secondaryLight);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .cs-container {
+        width: 100%;
+        max-width: (560/16rem);
+        margin: auto;
+        padding: (48/16rem) (24/16rem);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: (32/16rem);
+    }
+
+    .cs-logo {
+        width: (96/16rem);
+        height: (96/16rem);
+        display: block;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+    }
+
+    .cs-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: (16/16rem);
+    }
+
+    .cs-title {
+        font-family: var(--headerFont);
+        font-size: clamp(2rem, 4vw, 3rem);
+        font-weight: 400;
+        color: var(--headerColor);
+        line-height: 1.2;
+        margin: 0;
+    }
+
+    .cs-text {
+        font-size: (16/16rem);
+        color: #5a3a3c;
+        line-height: 1.8;
+        font-weight: 300;
+        max-width: (440/16rem);
+        margin: 0;
+    }
+
+    .cs-fine {
+        font-size: (12/16rem);
+        color: #b09a9c;
+        font-weight: 300;
+        letter-spacing: 0.06em;
+        font-style: italic;
+        font-family: var(--headerFont);
+        margin: 0;
+    }
+
+    .cs-back {
+        font-size: (12/16rem);
+        letter-spacing: 0.08em;
+        text-decoration: none;
+        color: #8a6a6c;
+        font-weight: 300;
+        transition: color 0.2s;
+
+        &:hover {
+            color: var(--primary);
+        }
+    }
+}
