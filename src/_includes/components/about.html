@@ -1,0 +1,39 @@
+<!-- About Takeover -->
+<div class="cs-about-takeover" id="cs-about-takeover" role="dialog" aria-modal="true" aria-labelledby="cs-about-title">
+    <button class="cs-about-close" id="cs-about-close" aria-label="close">✕</button>
+    <div class="cs-about-inner">
+        <p class="cs-about-title" id="cs-about-title">Somewhere along the way,<br>the table got smaller.</p>
+        <p class="cs-about-text">New city. New job. Same feeling of not quite finding your people. It's not that you stopped trying, it's that the ways we're supposed to meet each other just don't work anymore.</p>
+        <p class="cs-about-text">You move somewhere new and realise your social life doesn't transfer. You get older and the circle tightens. You show up to events and leave having spoken to no one real.</p>
+        <p class="cs-about-text">Good Company started as a simple idea: <em>put the right people at the same table and let dinner do the rest.</em></p>
+        <p class="cs-about-text">No apps. No small talk. No swiping. Just six people, one table, and one evening you won't forget.</p>
+    </div>
+</div>
+
+<script>
+    (() => {
+    const trigger = document.getElementById('cs-about-trigger');
+    const takeover = document.getElementById('cs-about-takeover');
+    const close = document.getElementById('cs-about-close');
+
+    const open = () => {
+        takeover.classList.add('cs-open');
+        document.body.style.overflow = 'hidden';
+        close.focus();
+    };
+
+    const shut = () => {
+        takeover.classList.remove('cs-open');
+        document.body.style.overflow = '';
+        trigger.focus();
+    };
+
+    trigger.addEventListener('click', open);
+    close.addEventListener('click', shut);
+
+    // close on escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && takeover.classList.contains('cs-open')) shut();
+    });
+})();
+</script>
