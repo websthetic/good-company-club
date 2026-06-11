@@ -36,18 +36,17 @@ tags: "sitemap" # content/content.json will make sure that all pages in content/
 <section id="hero">
     <div class="cs-container">
         <div class="cs-left">
-            <span class="cs-topper">Toronto · By invitation only</span>
-            <h1 class="cs-title">
+            <span class="cs-topper cs-animate">Toronto · By invitation only</span>
+            <h1 class="cs-title cs-animate">
                 Life's better with<br>
                 <em><span class="cs-word-swap">
                     <span class="cs-word cs-active">good company.</span>
                 </span></em>
             </h1>
-            <p class="cs-text">The first fifty people in get something nobody else will. This summer, you come as a guest. A good restaurant, a table worth sitting at, people you wouldn't have found on your own. Show up. Order what you want. Leave knowing someone real.</p>
+            <p class="cs-text cs-animate">The first fifty people in get something nobody else will. This summer, you come as a guest. A good restaurant, a table worth sitting at, people you wouldn't have found on your own. Show up. Order what you want. Leave knowing someone real.</p>
         </div>
-        <div class="cs-right">
-            <h2 class="cs-form-title">Your table
-awaits.</h2>
+        <div class="cs-right cs-animate">
+            <h2 class="cs-form-title">Your table awaits.</h2>
             <p class="cs-form-sub">Six strangers. One table.
 One unrepeatable evening.</p>
             <form class="cs-form" name="waitlist" method="POST" data-netlify="true">
@@ -83,6 +82,14 @@ setInterval(() => {
     next.classList.add('cs-active');
     setTimeout(() => currentEl.remove(), 500);
 }, 3500);
+
+// entrance animation
+const animateEls = document.querySelectorAll('#hero .cs-animate');
+animateEls.forEach((el, i) => {
+    setTimeout(() => {
+        el.classList.add('cs-visible');
+    }, 100 + (i * 150));
+});
 </script>
 
 <!-- ============================================ -->
