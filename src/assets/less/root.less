@@ -325,9 +325,9 @@ html {
     position: fixed;
     top: 0;
     z-index: 10000;
-    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+	transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 
-    &.cs-hidden {
+	&.cs-hidden {
         transform: translateY(-100%);
     }
 
@@ -427,6 +427,8 @@ html {
 
         .cs-logo {
             margin-right: auto;
+            width: (100/16rem);
+            height: (100/16rem);
         }
     }
 }
@@ -751,6 +753,15 @@ html {
     }
 }
 
+.cs-about-logo {
+    width: (140/16rem);
+    height: (140/16rem);
+    object-fit: contain;
+    position: fixed;
+    top: (8/16rem);
+    left: (96/16rem);
+}
+
 .cs-about-inner {
     max-width: (520/16rem);
     text-align: center;
@@ -786,5 +797,14 @@ html {
 @media (prefers-reduced-motion: reduce) {
     .cs-about-takeover {
         transition: none;
+    }
+}
+
+/* Mobile */
+@media only screen and (max-width: (768/16rem)) {
+    .cs-about-logo {
+        width: (100/16rem);
+        height: (100/16rem);
+        left: (16/16rem);
     }
 }

@@ -1,6 +1,7 @@
 <!-- About Takeover -->
 <div class="cs-about-takeover" id="cs-about-takeover" role="dialog" aria-modal="true" aria-labelledby="cs-about-title">
     <button class="cs-about-close" id="cs-about-close" aria-label="close">✕</button>
+    <img class="cs-about-logo" src="https://websthetic.tor1.cdn.digitaloceanspaces.com/the-good-co-club/the-good-co-club-logo-white.svg" alt="The Good Company Club" width="140" height="140" decoding="async">
     <div class="cs-about-inner">
         <p class="cs-about-title" id="cs-about-title">Somewhere along the way,<br>the table got smaller.</p>
         <p class="cs-about-text">New city. New job. Same feeling of not quite finding your people. It's not that you stopped trying, it's that the ways we're supposed to meet each other just don't work anymore.</p>
@@ -11,7 +12,7 @@
 </div>
 
 <script>
-    (() => {
+(() => {
     const trigger = document.getElementById('cs-about-trigger');
     const takeover = document.getElementById('cs-about-takeover');
     const close = document.getElementById('cs-about-close');
@@ -31,7 +32,6 @@
     trigger.addEventListener('click', open);
     close.addEventListener('click', shut);
 
-    // close on escape key
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape' && takeover.classList.contains('cs-open')) shut();
     });
